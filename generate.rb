@@ -10,6 +10,7 @@ require 'fileutils'
 
 DATA_FILE = 'data.yml'
 CONFIG_FILE = 'config.yml'
+SAMPLE_FILE = 'data.sample.yml'
 TEMPLATE = 'index.erb'
 OUTPUT = 'index.html'
 
@@ -21,6 +22,20 @@ def format_size(bytes)
     u += 1
   end
   "#{bytes.round(1)} #{units[u]}"
+end
+
+def generate(data, timestamp, folders)
+  data_json = data.to_json
+  template = ERB.new(File.read(TEMPLATE), trim_mode: '-')
+  File.write(OUTPUT, template.result(binding))
+end
+
+unless File.exist?(CONFIG_FILE)
+  data = YAML.load_file(SAMPLE_FILE)
+  snapshot = data.last
+  generate(data, snapshot['timestamp'], snapshot['folders'])
+  puts "Demo mode — generated #{OUTPUT} from sample data"
+  exit 0
 end
 
 config = YAML.load_file(CONFIG_FILE)
@@ -47,9 +62,4 @@ snapshot = { 'timestamp' => Time.now.iso8601, 'folders' => entries }
 data << snapshot
 
 File.write(DATA_FILE, data.to_yaml)
-
-data_json = data.to_json
-timestamp = snapshot['timestamp']
-folders = snapshot['folders']
-template = ERB.new(File.read(TEMPLATE), trim_mode: '-')
-File.write(OUTPUT, template.result(binding))
+generate(data, snapshot['timestamp'], snapshot['folders'])
