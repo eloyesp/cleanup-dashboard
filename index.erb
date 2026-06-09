@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleanup Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Cleanup Dashboard</h1>
+  <p>Last updated: <%= timestamp %></p>
+</header>
+
+<section id="overview">
+  <div class="chart-card">
+    <h2>Files</h2>
+    <canvas id="filesChart"></canvas>
+  </div>
+  <div class="chart-card">
+    <h2>Size</h2>
+    <canvas id="sizeChart"></canvas>
+  </div>
+</section>
+
+<section>
+  <h2>Current Snapshot</h2>
+  <table>
+    <thead><tr><th>Folder</th><th class="num">Files</th><th class="num">Size</th></tr></thead>
+    <tbody>
+      <% folders.each do |f| %>
+      <tr><td><%= f['label'] %></td><td class="num"><%= f['files'] %></td><td class="num"><%= format_size(f['size_bytes']) %></td></tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+<section id="per-folder">
+  <% folders.each_with_index do |f, i| %>
+  <div class="chart-card">
+    <h2><%= f['label'] %></h2>
+    <div class="mini-charts">
+      <div class="mini-chart"><h3>Files</h3><canvas id="chart-<%= i %>-files"></canvas></div>
+      <div class="mini-chart"><h3>Size</h3><canvas id="chart-<%= i %>-size"></canvas></div>
+    </div>
+  </div>
+  <% end %>
+</section>
+
+<script>const DATA = <%= data_json %>;</script>
+<script src="vendor/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
