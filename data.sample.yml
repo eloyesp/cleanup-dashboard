@@ -1,67 +1,67 @@
 ---
 - timestamp: '2026-05-25T12:00:00-03:00'
   folders:
-  - label: Downloads
-    files: 580
-    size_bytes: 1288490189
-  - label: Desktop
-    files: 85
-    size_bytes: 356515840
-  - label: Documents
-    files: 120
-    size_bytes: 933232640
+    - label: Downloads
+      files: 580
+      size_bytes: 1288490189
+    - label: Desktop
+      files: 85
+      size_bytes: 356515840
+    - label: Documents
+      files: 120
+      size_bytes: 933232640
 - timestamp: '2026-05-27T12:00:00-03:00'
   folders:
-  - label: Downloads
-    files: 510
-    size_bytes: 1026523136
-  - label: Desktop
-    files: 72
-    size_bytes: 293601280
-  - label: Documents
-    files: 118
-    size_bytes: 927989760
+    - label: Downloads
+      files: 510
+      size_bytes: 1026523136
+    - label: Desktop
+      files: 72
+      size_bytes: 293601280
+    - label: Documents
+      files: 118
+      size_bytes: 927989760
 - timestamp: '2026-05-29T12:00:00-03:00'
   folders:
-  - label: Downloads
-    files: 420
-    size_bytes: 849346560
-  - label: Desktop
-    files: 50
-    size_bytes: 199229440
-  - label: Documents
-    files: 115
-    size_bytes: 922746880
+    - label: Downloads
+      files: 420
+      size_bytes: 849346560
+    - label: Desktop
+      files: 50
+      size_bytes: 199229440
+    - label: Documents
+      files: 115
+      size_bytes: 922746880
 - timestamp: '2026-05-31T12:00:00-03:00'
   folders:
-  - label: Downloads
-    files: 310
-    size_bytes: 650117120
-  - label: Desktop
-    files: 28
-    size_bytes: 99614720
-  - label: Documents
-    files: 110
-    size_bytes: 912261120
+    - label: Downloads
+      files: 310
+      size_bytes: 650117120
+    - label: Desktop
+      files: 28
+      size_bytes: 99614720
+    - label: Documents
+      files: 110
+      size_bytes: 912261120
 - timestamp: '2026-06-03T12:00:00-03:00'
   folders:
-  - label: Downloads
-    files: 240
-    size_bytes: 503316480
-  - label: Desktop
-    files: 12
-    size_bytes: 35651584
-  - label: Documents
-    files: 108
-    size_bytes: 906035200
+    - label: Downloads
+      files: 240
+      size_bytes: 503316480
+    - label: Desktop
+      files: 12
+      size_bytes: 35651584
+    - label: Documents
+      files: 108
+      size_bytes: 906035200
 - timestamp: '2026-06-07T12:00:00-03:00'
   folders:
-  - label: Downloads
-    files: 208
-    size_bytes: 434111359
-  - label: Desktop
-    files: 1
-    size_bytes: 7584
-  - label: Documents
-    files: 105
-    size_bytes: 891289600
+    - label: Downloads
+      files: 208
+      size_bytes: 434111359
+    - label: Desktop
+      files: 1
+      size_bytes: 7584
+    - label: Documents
+      files: 105
+      size_bytes: 891289600
