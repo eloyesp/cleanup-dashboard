@@ -12,7 +12,7 @@ Dir.chdir(__dir__)
 
 DATA_FILE = 'data.yml'
 CONFIG_FILE = 'config.yml'
-SAMPLE_FILE = 'data.sample.yml'
+SAMPLE_FILE = 'sample.data.json'
 TEMPLATE = 'index.erb'
 OUTPUT = 'index.html'
 
@@ -23,7 +23,7 @@ def generate(data, timestamp, folders)
 end
 
 unless File.exist?(CONFIG_FILE)
-  data = YAML.load_file(SAMPLE_FILE)
+  data = JSON.parse(File.read(SAMPLE_FILE))
   snapshot = data.last
   generate(data, snapshot['timestamp'], snapshot['folders'])
   puts "Demo mode — generated #{OUTPUT} from sample data"
