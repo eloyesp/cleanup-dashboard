@@ -48,7 +48,7 @@ function mergedChart() {
     type: 'line',
     data: { datasets },
     options: {
-      responsive: true, maintainAspectRatio: true,
+      responsive: true, maintainAspectRatio: false,
       plugins: { legend: { labels: { color: '#94a3b8', filter: (item) => item.datasetIndex % 2 === 0 } } },
       scales: {
         x: xScale(),
