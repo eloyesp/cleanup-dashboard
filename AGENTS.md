@@ -1,6 +1,6 @@
 # Conventions
 
-- Commit often with short, meaningful messages.
+- Commit often. Subject line ≤ 50 chars, imperative mood, no period. Body at 72 chars when needed.
 - Keep code short and simple. Prefer the simpler implementation over extra features.
 - Use Ruby stdlib only — no gems.
 - External tools (`du`, `find`) are acceptable for performance.
