@@ -23,6 +23,4 @@ th { background: #334155; font-weight: 600; color: #94a3b8; font-size: 0.8rem; t
 td { border-top: 1px solid #334155; }
 tr:hover td { background: #1e293b; }
 .num { text-align: right; font-variant-numeric: tabular-nums; }
-#per-folder { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
-.mini-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-.mini-chart h3 { font-size: 0.75rem; color: #64748b; margin-bottom: 0.25rem; }
+
