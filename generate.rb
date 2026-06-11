@@ -16,16 +16,6 @@ SAMPLE_FILE = 'data.sample.yml'
 TEMPLATE = 'index.erb'
 OUTPUT = 'index.html'
 
-def format_size(bytes)
-  units = %w[B KiB MiB GiB TiB]
-  u = 0
-  while bytes >= 1024 && u < units.size - 1
-    bytes /= 1024.0
-    u += 1
-  end
-  "#{bytes.round(1)} #{units[u]}"
-end
-
 def generate(data, timestamp, folders)
   data_json = data.to_json
   template = ERB.new(File.read(TEMPLATE), trim_mode: '-')

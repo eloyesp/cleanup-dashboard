@@ -23,18 +23,6 @@
   </div>
 </section>
 
-<section>
-  <h2>Current Snapshot</h2>
-  <table>
-    <thead><tr><th>Folder</th><th class="num">Files</th><th class="num">Size</th></tr></thead>
-    <tbody>
-      <% folders.each do |f| %>
-      <tr><td><%= f['label'] %></td><td class="num"><%= f['files'] %></td><td class="num"><%= format_size(f['size_bytes']) %></td></tr>
-      <% end %>
-    </tbody>
-  </table>
-</section>
-
 <script>const DATA = <%= data_json %>;</script>
 <script src="vendor/chart.umd.min.js"></script>
 <script src="script.js"></script>

@@ -14,13 +14,4 @@ h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: #94a3b8
   box-shadow: 0 1px 3px rgba(0,0,0,.3);
 }
 .chart-card canvas { width: 100% !important; max-height: 300px; }
-table {
-  width: 100%; border-collapse: collapse; margin-bottom: 2rem;
-  background: #1e293b; border-radius: 0.75rem; overflow: hidden;
-}
-th, td { padding: 0.625rem 1rem; text-align: left; }
-th { background: #334155; font-weight: 600; color: #94a3b8; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
-td { border-top: 1px solid #334155; }
-tr:hover td { background: #1e293b; }
-.num { text-align: right; font-variant-numeric: tabular-nums; }
 
