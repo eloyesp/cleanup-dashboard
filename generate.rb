@@ -8,6 +8,8 @@ require 'shellwords'
 require 'time'
 require 'fileutils'
 
+Dir.chdir(__dir__)
+
 DATA_FILE = 'data.yml'
 CONFIG_FILE = 'config.yml'
 SAMPLE_FILE = 'data.sample.yml'
