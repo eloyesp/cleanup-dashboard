@@ -11,3 +11,4 @@
 - `style.css` and `script.js` are the static assets — edit for visual/layout changes.
 - `index.erb` is the HTML template — edit for layout changes.
 - `config.yml` is the config file — edit to change monitored folders.
+- Run `tokei` before and after each change to keep lines of code visible.
