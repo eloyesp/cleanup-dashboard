@@ -49,7 +49,7 @@ function mergedChart() {
     data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: true,
-      plugins: { legend: { labels: { color: '#94a3b8' } } },
+      plugins: { legend: { labels: { color: '#94a3b8', filter: (item) => item.datasetIndex % 2 === 0 } } },
       scales: {
         x: xScale(),
         y: yScale(v => v),
