@@ -28,24 +28,36 @@ function yScale(yFmt) {
   };
 }
 
-function chart(id, dataKey, yFmt) {
-  const datasets = DATA[0].folders.map((f, i) => ({
-    label: f.label,
-    data: DATA.map(d => ({ x: new Date(d.timestamp).getTime(), y: d.folders[i][dataKey] })),
-    borderColor: COLORS[i], backgroundColor: BG[i],
-    tension: 0.3,
-  }));
-  new Chart(document.getElementById(id), {
+function mergedChart() {
+  const datasets = [];
+  DATA[0].folders.forEach((f, i) => {
+    datasets.push({
+      label: f.label,
+      data: DATA.map(d => ({ x: new Date(d.timestamp).getTime(), y: d.folders[i].files })),
+      borderColor: COLORS[i], backgroundColor: BG[i],
+      tension: 0.3, yAxisID: 'y',
+    });
+    datasets.push({
+      label: f.label,
+      data: DATA.map(d => ({ x: new Date(d.timestamp).getTime(), y: d.folders[i].size_bytes })),
+      borderColor: COLORS[i], backgroundColor: BG[i],
+      borderDash: [5, 3], tension: 0.3, yAxisID: 'y1',
+    });
+  });
+  new Chart(document.getElementById('mergedChart'), {
     type: 'line',
     data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: true,
       plugins: { legend: { labels: { color: '#94a3b8' } } },
-      scales: { x: xScale(), y: yScale(yFmt) },
+      scales: {
+        x: xScale(),
+        y: yScale(v => v),
+        y1: { position: 'right', ticks: { color: '#64748b', callback: formatBytes }, grid: { drawOnChartArea: false } },
+      },
     },
   });
 }
 
-chart('filesChart', 'files', v => v);
-chart('sizeChart', 'size_bytes', formatBytes);
+mergedChart();
 
