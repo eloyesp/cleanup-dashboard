@@ -1,4 +1,5 @@
-const COLORS = ['#f87171', '#34d399', '#60a5fa', '#fbbf24', '#a78bfa', '#fb923c'];
+const root = getComputedStyle(document.documentElement);
+const COLORS = [0,1,2,3,4,5].map(i => root.getPropertyValue(`--color-${i}`).trim());
 const BG = COLORS.map(c => c + '33');
 
 function fmtDate(ms) {
