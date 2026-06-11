@@ -13,6 +13,17 @@
   --border-grid: #334155;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-card: #fdf6e3;
+    --fg-body: #657b83;
+    --fg-muted: #586e75;
+    --fg-dim: #839496;
+    --bg-body: #eee8d5;
+    --border-grid: #d5ccb6;
+  }
+}
+
 /* reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
